@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+        <title>YouTube</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="volume_alert">
+                <div class="inner_volume_alert hid">
+                    <span>100 %</span>
+                </div>
+            </div>
+
+            <div class="center_alert">
+                <div class="inner_center_alert">
+                    <svg>
+                        <path></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="title_block" style="z-index: -1;">
+                <div class="title_message">
+                    <span>Play (k)</span>
+                </div>
+            </div>
+
+            <section>
+                <video src="video.mp4" onclick='playButtonClick()'></video>
+            </section>
+
+            <section>
+                <div class="preview">
+                    <svg version="1.1" viewBox="0 0 68 48" onclick='showVideo()'>
+                        <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path>
+                        <path d="M 45,24 27,14 27,34" fill="#fff" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#e8e6e3;"></path>
+                    </svg>
+                </div>
+            </section>
+
+            <header>
+                <div class="account_info" onmousemove="showAccount()" onmouseout="hideAccount()">
+                    <div class="account_text">
+                        <a href="https://www.youtube.com/channel/UCWp-5ZH1E444uZi_eLgiNcg" target="_blank">Rainboy</a>
+                        <span>460 subscribers</span>
+                    </div>
+
+                    <div class="account_button">
+                        <div class="account_button_content">
+                            <span>Subscribe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header_img" onmousemove="showAccount()" onclick='getAccount()'></div>
+                <div class="header_text">
+                    <a href="https://www.youtube.com/watch?v=eUL0pbgOdQY" target="_blank">
+                        ШКОЛЬНИК НЕЧЕГО НЕ СНИМАЛ И СТАЛ ПОПУЛЯРНЫМ! КАК ПРОЙТИ МАЙНКРАФТ БЕЗ МОЗГОВ? НЕ ВЫЖИВАНИЕ БОМЖА
+                    </a>
+                </div>
+
+                <span>...</span>
+
+                <div class="header_buttons">
+                    <div class="header_button">
+                        <svg height="100%" version="1.1" viewBox="0 0 36 36"><path d="M18,8 C12.47,8 8,12.47 8,18 C8,23.52 12.47,28 18,28 C23.52,28 28,23.52 28,18 C28,12.47 23.52,8 18,8 L18,8 Z M16,19.02 L16,12.00 L18,12.00 L18,17.86 L23.10,20.81 L22.10,22.54 L16,19.02 Z"></path></svg>
+                        <div class="header_button_text">Watch later</div>
+                    </div>
+
+                    <div class="header_button">
+                        <svg height="100%" version="1.1" viewBox="0 0 36 36"><path d="m 20.20,14.19 0,-4.45 7.79,7.79 -7.79,7.79 0,-4.56 C 16.27,20.69 12.10,21.81 9.34,24.76 8.80,25.13 7.60,27.29 8.12,25.65 9.08,21.32 11.80,17.18 15.98,15.38 c 1.33,-0.60 2.76,-0.98 4.21,-1.19 z"></path></svg>
+                        <div class="header_button_text">Share</div>
+                    </div>
+                </div>
+            </header>
+            
+            <footer>
+                <div class="timeline">
+                    <div class="timeline_grey" style='width: 0%;'></div>
+                    <div class="active_timeline active" style="width: 0%;">
+                        <div class="active_timeline_thumb"></div>
+                    </div>
+                </div>
+
+                <div class="footer_content">
+                    <div class="control_button">
+                        <div class="play_button" onclick='playButtonClick(); showTitleMessage(this)'
+                        onmousemove="showTitleMessage(this)" onmouseout="hideTitleMessage()" title='Play (k)'>
+                            <svg version="1.1" viewBox="0 0 36 36"><path></path></svg>
+                        </div>
+                    </div>
+
+                    <div class="volume_parent_block" style="width: 80px;">
+                        <div class="volume_button">
+                            <div class="volume_active_button" onclick='preVolumeButtonClick(); showTitleMessage(this)'
+                            onmousemove="showTitleMessage(this)" onmouseout="hideTitleMessage()" title="Mute (m)">
+                                <svg version="1.1" viewBox="0 0 36 36">
+                                    <path></path>
+                                </svg>
+                            </div>
+                        </div>
+    
+                        <div class="volume_slider_block" style="width: 0px;">
+                            <div class="volume_slider">
+                                <div class="volume_slider_active">
+                                    <div class="volume_slider_thumb" style="transform: scale(0);"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="volume_end_block"></div>
+                    </div>
+
+                    <div class="timeline_content">
+                        <div class="timeline_content_text"></div>
+                    </div>
+
+                    <div class="right_buttons">
+                        <div class="settings_button" title="Settings" onmousemove="showTitleMessage(this)"
+                        onmouseout="hideTitleMessage()">
+                            <svg>
+                                <path d="m 23.94,18.78 c .03,-0.25 .05,-0.51 .05,-0.78 0,-0.27 -0.02,-0.52 -0.05,-0.78 l 1.68,-1.32 c .15,-0.12 .19,-0.33 .09,-0.51 l -1.6,-2.76 c -0.09,-0.17 -0.31,-0.24 -0.48,-0.17 l -1.99,.8 c -0.41,-0.32 -0.86,-0.58 -1.35,-0.78 l -0.30,-2.12 c -0.02,-0.19 -0.19,-0.33 -0.39,-0.33 l -3.2,0 c -0.2,0 -0.36,.14 -0.39,.33 l -0.30,2.12 c -0.48,.2 -0.93,.47 -1.35,.78 l -1.99,-0.8 c -0.18,-0.07 -0.39,0 -0.48,.17 l -1.6,2.76 c -0.10,.17 -0.05,.39 .09,.51 l 1.68,1.32 c -0.03,.25 -0.05,.52 -0.05,.78 0,.26 .02,.52 .05,.78 l -1.68,1.32 c -0.15,.12 -0.19,.33 -0.09,.51 l 1.6,2.76 c .09,.17 .31,.24 .48,.17 l 1.99,-0.8 c .41,.32 .86,.58 1.35,.78 l .30,2.12 c .02,.19 .19,.33 .39,.33 l 3.2,0 c .2,0 .36,-0.14 .39,-0.33 l .30,-2.12 c .48,-0.2 .93,-0.47 1.35,-0.78 l 1.99,.8 c .18,.07 .39,0 .48,-0.17 l 1.6,-2.76 c .09,-0.17 .05,-0.39 -0.09,-0.51 l -1.68,-1.32 0,0 z m -5.94,2.01 c -1.54,0 -2.8,-1.25 -2.8,-2.8 0,-1.54 1.25,-2.8 2.8,-2.8 1.54,0 2.8,1.25 2.8,2.8 0,1.54 -1.25,2.8 -2.8,2.8 l 0,0 z"></path>
+                            </svg>
+                        </div>
+
+                        <div class='resize_button'>
+                            <div class="resize_active_button" onclick='resizeButtonClick(); showTitleMessage(this)'
+                            onmousemove="showTitleMessage(this)" onmouseout="hideTitleMessage()" title="Full screen (f)">
+                                <svg>
+                                    <path></path><path></path>
+                                    <path></path><path></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
